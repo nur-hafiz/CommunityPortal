@@ -1,0 +1,5 @@
+//Add jobs into tb_user_job
+INSERT INTO tb_user_job (company_name, job_title, month_start, year_start, month_end, year_end)
+VALUES ('test','title','July','2000','January','2010')
+
+//Add relation tb_user_job - works - tb_user
