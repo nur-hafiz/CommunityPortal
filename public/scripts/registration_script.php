@@ -2,6 +2,10 @@
 require_once '../includes/autoload.php';
 $declaration = new VariableUtil;
 
+/*
+ * check_session() returns empty string if SESSION variable doesn't exist
+ * SESSION variable exists if user already submits the form but goes back to edit
+ */
 $city    = $declaration->check_session('city');
 $email   = $declaration->check_session('email');
 $company = $declaration->check_session('company');
@@ -63,10 +67,13 @@ if($_SERVER['REQUEST_METHOD']=='POST'){
 		$exist_username = $UM->getUserByUsername($username);
 		$exist_username ? $username_error = 'Username is already taken' : null;
 	}
-
+	
+	/*
+	 * If no errors redirect to registrationconfirmation.php
+	 * Form values will be set as SESSION variable
+	 */
 	if(!($city_error   || $username_error || $last_name_error  ||
 			 $email_error  || $password_error || $first_name_error || $country_error)){
-		$user = new User;
 		$Redirect = new RedirectUtil;
 		$Redirect->registration_confirmation($city , $country, $username, $last_name,
 																				 $email, $company, $password, $first_name);
