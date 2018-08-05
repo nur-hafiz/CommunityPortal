@@ -1,5 +1,6 @@
 <?php
 $UM = new UserManager;
+$Redirect = new RedirectUtil; 
 $user = $UM->getUserByID($_SESSION['user']);
 
 $city    = $user->city;
@@ -83,8 +84,9 @@ if($_SERVER['REQUEST_METHOD']=='POST'){
 		$user->last_name = $last_name;
 		$user->first_name = $first_name;
 		$user->mail_subscribe = $mail_subscribe;
+		
 		$UM->updateUser($user);
-		$Redirect = new RedirectUtil;
+		$Redirect->view_profile($_SESSION['user']);
 	}
 }
 ?>

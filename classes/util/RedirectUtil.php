@@ -21,14 +21,14 @@ class RedirectUtil
 	
 	public static function registration_confirmation($city , $country, $username, $last_name,
 																									 $email, $company, $password, $first_name){
-		$_SESSION['city'] = $city;
-		$_SESSION['email'] = $email;
-		$_SESSION['company'] = $company;
-		$_SESSION['country'] = $country;
+		$_SESSION['city']			= $city;
+		$_SESSION['email']		= $email;
+		$_SESSION['company']	= $company;
+		$_SESSION['country']	= $country;
 		$_SESSION['username'] = $username;
 		$_SESSION['password'] = $password;
-		$_SESSION['lName'] = $last_name;
-		$_SESSION['fName'] = $first_name;
+		$_SESSION['lName']		= $last_name;
+		$_SESSION['fName']		= $first_name;
 		header('Location:registrationconfirmation.php');
 	}
 	

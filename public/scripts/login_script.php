@@ -18,6 +18,11 @@ if($_SERVER['REQUEST_METHOD']=='POST'){
 		$password = $Validate->clean_string('password');
 	}
 	
+	/* Check if user is in DB:
+	 * If user is blocked, print "Your account is blocked"
+	 * If user is not blocked, redirect to home page
+	 * If user not in DB, print "Invalid username or password
+	 */
 	if(!($username_error || $password_error)){
 		$UM = new UserManager;
 		$Redirect = new RedirectUtil;

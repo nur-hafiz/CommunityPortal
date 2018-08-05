@@ -30,7 +30,7 @@ if($_SERVER['REQUEST_METHOD']=='POST'){
 			}
 			else
 			{
-				echo "Message sent to: ".$row['email'];
+				echo "Email sent!";
 			}
 			$mail->clearAddresses();
 		}
