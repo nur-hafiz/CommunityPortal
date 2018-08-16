@@ -93,7 +93,7 @@ if($user->is_admin){
     </li>
     
     <?=$bulk_mail?>
-    
+    <!-- 
     <li class="nav-item">
     	<a class="nav-link" href="#">
     	<button class='btn btn-custom'>Threads</button></a>
@@ -110,7 +110,7 @@ if($user->is_admin){
       	<a class="dropdown-item" href="#">Applied Jobs</a>
       </div>
     </li>
-
+ 		-->
     </ul>
     <form action='searchusers.php' class="form-inline my-2 mr-2 my-lg-0">
       <input class="form-control mr-sm-2" type="search" placeholder="Search" name='navbarSearch' aria-label="Search">
