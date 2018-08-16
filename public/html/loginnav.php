@@ -7,7 +7,7 @@ $user = $UM->getUserByID($userID);
 $bulk_mail = '';
 if($user->is_admin){
 	$bulk_mail = '<li class="nav-item">
-									 <a class="nav-link" href="bulkmail.ph">
+									 <a class="nav-link" href="bulkmail.php">
 									 <button class="btn btn-custom">Bulk Mail</button></a>
 									 </li>';
 }

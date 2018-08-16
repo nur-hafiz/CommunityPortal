@@ -17,9 +17,21 @@ $country 	 = camel_case($user->country);
 $company 	 = camel_case($user->company);
 $full_name = camel_case($user->first_name.' '. $user->last_name);
 
-#Variables will be null if user is not viewing his own profile
-$add_jobs 		= $userID == $_SESSION['user'] ? "<a href='updateprofilejobs.php'>Add Jobs</a>" : null;
-$edit_profile = $userID == $_SESSION['user'] ? "<a href='updateprofile.php'>Edit Profile</a>": null;
+#Retrieving profile picture saved by ID
+$file_types 		 = ['.jpg','.jpeg','.png'];
+$profile_picture = '';
+foreach($file_types as $extension){
+	$photo = '../displaypicture/'.$userID.$extension;
+	if(file_exists($photo)){
+		$profile_picture = $photo;
+		break;
+	}
+}
+
+#Variables to update profile will be null if user is not viewing his own profile
+$add_jobs				= $userID == $_SESSION['user'] ? "<a href='updateprofilejobs.php'>Add Jobs</a>" : null;
+$edit_profile		= $userID == $_SESSION['user'] ? "<a href='updateprofile.php'>Edit Profile</a>": null;
+$upload_picture = $userID == $_SESSION['user'] ? "<a href='updateprofilepicture.php'>Upload Picture</a>": null;
 
 #Adds markup for each job corresponding to the user ID
 if($user_jobs){

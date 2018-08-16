@@ -21,7 +21,7 @@ if($_SERVER['REQUEST_METHOD']=='POST' || (isset($_GET['navbarSearch']))){
 	
 	if($Search->adminAction('delete_button', 'delete')){
 		$UM->deleteUser($_REQUEST['delete']);
-		$UJM->deleteUserJobs($_REQUEST['delete']);
+		$UJM->deleteUserJobsByUserID($_REQUEST['delete']);
 		header('Location: searchusers.php');
 	}
 	

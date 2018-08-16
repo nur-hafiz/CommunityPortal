@@ -7,7 +7,10 @@ require_once '../scripts/viewprofile_script.php';
   	<div class='col-10'>
     <div class='row light-purple-text purple-border white-bg mt-4 py-4'>
       <div class='col-1'></div>
-      <div class='col-10 col-sm-3'><img style='border: 1px solid black; height:10em' src="..\images\profilepicture.jpg" class="d-block mx-auto rounded-circle"></div>
+      <div class='col-10 col-sm-3' style='text-align:center'>
+      	<img style='border: 1px solid black; height:10em; width:10em;' src="<?=$profile_picture?>" class="d-block mx-auto rounded-circle">
+      	<?=$upload_picture?>
+      </div>
       <div class='col-1'></div>
 
       <div class='col-2 d-sm-none'></div>

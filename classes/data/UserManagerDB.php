@@ -1,6 +1,9 @@
 <?php
 require_once '../../public/includes/autoload.php';
 
+/**
+ * UserManagerDB class sends SQL queries to Database affecting TB_USER
+ */
 class UserManagerDB
 {
 	public static function fillUser($row){
@@ -20,6 +23,16 @@ class UserManagerDB
 		return $user;
 	}
 	
+	/**
+	 * Fill User object with properties
+	 * 
+	 * Function will assign User properties with each column in database
+	 * This function is used if only 1 user is expected
+	 * Returns User object if $result > 0
+	 * Else returns null
+	 * 
+	 * @param array $result SQL result to be given as parameter
+	 */
 	public static function fillOneUser($result){
 		if($result->num_rows>0){
 			$row=$result->fetch_assoc();
@@ -28,6 +41,17 @@ class UserManagerDB
 		return isset($user) ? $user : null;
 	}
 	
+	
+	/**
+	 * Fill User objects with properties
+	 *
+	 * Function will assign User properties with each column in database
+	 * This function is used if $result can be more than 1
+	 * Returns array of User objects if $result > 0
+	 * Else returns null
+	 *
+	 * @param array $result SQL result to be given as parameter
+	 */
 	public static function fillUsersArray($result){
 		if($result->num_rows>0){
 			while($row=$result->fetch_assoc()){

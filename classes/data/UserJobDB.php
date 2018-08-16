@@ -1,6 +1,9 @@
 <?php
 require_once '../../public/includes/autoload.php';
 
+/**
+ * UserJobDB class sends SQL queries to Database affecting TB_USER_JOB
+ */
 class UserJobDB
 {
 	public static function fillUserJob($row){
@@ -15,6 +18,15 @@ class UserJobDB
 		return $user_job;
 	}
 	
+	/**
+	 * Fill UserJob objects with properties
+	 *
+	 * Function will assign UserJob properties with each column in database
+	 * Returns array of UserJob objects if $result > 0
+	 * Else returns null
+	 *
+	 * @param array $result SQL result to be given as parameter
+	 */
 	public static function fillUserJobArray($result){
 		if($result->num_rows>0){
 			while($row=$result->fetch_assoc()){
@@ -48,7 +60,7 @@ class UserJobDB
 		$con->close();
 	}
 	
-	public static function deleteUserJobs($delete_array){
+	public static function deleteUserJobsByUserID($delete_array){
 		$con = DBUtil::getConnection();
 		foreach($delete_array as $id){
 			$sql = "DELETE FROM tb_user_job WHERE user_id = '$id'";

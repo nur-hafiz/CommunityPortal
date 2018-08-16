@@ -3,7 +3,7 @@ ob_start();
 require_once '../includes/security.php';
 require_once '../scripts/searchusers_script.php';
 ?>
-Search users
+<h2>Search users</h2>
 <form name='searchUsers' method='POST'>
 
 <label>First Name: </label>
@@ -22,3 +22,7 @@ Search users
 <?=$search_result?>
 <?=$search_close?>
 </form>
+
+<?php
+require_once '../includes/footer.php';
+?>

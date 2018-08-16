@@ -1,4 +1,15 @@
 <?php 
+
+/**
+ * User class represents the User Job Entities
+ * 
+ * The variables in this class are the properties represented in
+ * the TB_USER_JOB table in the Database
+ * Jobs are the jobs user saved in profile page
+ * 
+ * @property int $user_job_id Unique ID per job
+ * @property int $user_id User ID of user which the job belongs to
+ */
 class UserJob
 {
 	public $user_job_id=0;

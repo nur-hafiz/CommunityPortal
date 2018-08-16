@@ -34,6 +34,7 @@ require_once '../scripts/bulkmail_script.php';
 </form>
 </div>
 <div class='col-1 col-md-3'></div>
+</div>
 <?php
 require_once '../includes/footer.php';
 ?>
