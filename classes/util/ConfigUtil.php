@@ -18,7 +18,6 @@ class ConfigUtil
         if(isset($config)==false || $reload==true){
         	#$ini =  parse_ini_file("C:/phpunit/bin/src/Project/config/cpc.ini");
           $ini = parse_ini_file(self::getApplicationRoot()."config/mysqlconfig.ini");
-          
           $config=new ConfigUtil();
           $config->mysqlDB=$ini['mysqldb'];
           $config->mysqlUser=$ini['mysqluser'];
